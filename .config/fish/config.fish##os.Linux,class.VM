@@ -1,0 +1,39 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+# https://iterm2.com/documentation-shell-integration.html
+source ~/.iterm2_shell_integration.fish
+
+# https://github.com/IlanCosman/tide
+set -g tide_left_prompt_items os pwd git newline character
+set -g tide_right_prompt_items status cmd_duration context jobs virtual_env php go node kubectl time
+set -g tide_node_icon 
+
+# gpg
+set -x GPG_TTY (tty)
+
+# lang
+set -x LC_ALL en_US.UTF-8
+set -x LANG en_US.UTF-8
+set -x LC_TYPE en_US.UTF-8
+set -x LANGUAGE en_US.UTF-8
+
+# timezone
+set -x TZ Europe/Kiev
+
+# set default editor https://unix.stackexchange.com/questions/73484/how-can-i-set-vi-as-my-default-editor-in-unix
+set -x VISUAL micro
+set -x EDITOR "$VISUAL"
+set -x MICRO_TRUECOLOR 1 # enable true color
+
+# enable 256 terminal color mode
+set -x COLORTERM xterm-256color #24bit
+set -x TERM xterm-256color
+
+# https://github.com/ajeetdsouza/zoxide
+zoxide init fish --cmd cd | source
+
+# https://github.com/antonmedv/fx
+set -x FX_LANG js
+set -x FX_SHOW_SIZE true
