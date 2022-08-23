@@ -37,3 +37,6 @@ zoxide init fish --cmd cd | source
 # https://github.com/antonmedv/fx
 set -x FX_LANG js
 set -x FX_SHOW_SIZE true
+
+# https://github.com/garabik/grc
+source (nix-store -q (which grc))/etc/grc.fish
