@@ -49,7 +49,7 @@
 		
 		# editors
 		micro
-		neovim
+		# neovim
 		
 		# http
 		httpie
