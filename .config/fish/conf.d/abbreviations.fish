@@ -3,7 +3,7 @@ abbr --add ls       'exa --icons --git'
 abbr --add l        'exa --icons --git'
 abbr --add ll       'exa --icons --git -lb'
 abbr --add la       'exa --icons --git -ab'
-abbr --add lla      'exa --icons --git -abl'
+abbr --add lla      'exa --icons --git -ablg'
 abbr --add lsd      'exa --icons --git -bD'
 
 # https://github.com/zyedidia/micro
