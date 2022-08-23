@@ -1,0 +1,59 @@
+{ config, pkgs, ... }:
+
+{
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  # Set nixpkgs options (for home-manager installed packages only).
+  nixpkgs.config = {
+    allowUnfree = true;
+    cudaSupport = true;
+  };
+
+  # Packages.
+  home.packages = with pkgs; [
+		# terminal utils
+		bat
+		bat-extras-batdiff
+		bat-extras-batgrep
+		bat-extras-batman
+		fd
+		ripgrep
+		fselect
+		exa
+		fzf
+		delta
+		git-extras
+		zoxide
+		imgcat
+		xplr
+		gping
+		grc
+
+		# system utils
+		restic
+		graphviz
+		resholved-yadm
+		btop
+		ctop
+		lazydocker
+		lnav
+		sqlite
+		iperf
+		nmap
+		
+		# json
+		jless
+		jq
+		fx
+		
+		# editors
+		micro
+		neovim
+		
+		# http
+		httpie
+		xh
+    wget
+  ];
+}
