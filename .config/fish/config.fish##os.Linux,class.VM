@@ -34,3 +34,6 @@ set -x FX_SHOW_SIZE true
 
 # https://github.com/garabik/grc
 source (nix-store -q (which grc))/etc/grc.fish
+
+# https://nixos.wiki/wiki/Locales
+set -x LOCALE_ARCHIVE /usr/lib/locale/locale-archive
