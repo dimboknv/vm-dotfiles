@@ -33,7 +33,7 @@
 		# system utils
 		restic
 		graphviz
-		resholved-yadm
+		yadm
 		btop
 		ctop
 		lazydocker
