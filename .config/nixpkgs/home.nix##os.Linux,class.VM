@@ -14,9 +14,9 @@
   home.packages = with pkgs; [
 		# terminal utils
 		bat
-		bat-extras-batdiff
-		bat-extras-batgrep
-		bat-extras-batman
+		bat-extras.batdiff
+		bat-extras.batgrep
+		bat-extras.batman
 		fd
 		ripgrep
 		fselect
