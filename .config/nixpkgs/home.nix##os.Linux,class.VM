@@ -31,7 +31,6 @@
 		grc
 
 		# system utils
-		restic
 		graphviz
 		yadm
 		btop
@@ -41,6 +40,7 @@
 		sqlite
 		iperf
 		nmap
+		# restic
 		
 		# json
 		jless
