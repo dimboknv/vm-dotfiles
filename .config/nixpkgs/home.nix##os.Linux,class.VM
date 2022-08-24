@@ -40,7 +40,7 @@
 		sqlite
 		iperf
 		nmap
-		# restic
+		restic
 		
 		# json
 		jless
