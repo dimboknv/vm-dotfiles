@@ -39,4 +39,4 @@ source (nix-store -q (which grc))/etc/grc.fish
 set -x LOCALE_ARCHIVE /usr/lib/locale/locale-archive
 
 # nix home-manager https://nix-community.github.io/home-manager/index.html#sec-install-standalone
-set -x NIX_PATH $HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
+set -x NIX_PATH $HOME/.nix-defexpr/channels /nix/var/nix/profiles/per-user/root/channels
