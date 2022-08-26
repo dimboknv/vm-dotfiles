@@ -15,7 +15,7 @@ exec 2>&1
 export PATH="$restic_path:$PATH"
 
 # get RESTIC_PASSWORD, RESTIC_REPOSITORY
-. $repo_file
+source $repo_file
 
 echo -e "\n$(date)\nInitialize backup..."
 if [[ -f $pid_file ]]; then
