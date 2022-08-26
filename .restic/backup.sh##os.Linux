@@ -32,14 +32,14 @@ if [[ -f $pid_file ]]; then
     rm $pid_file
   else
     echo "PID $pid is still running or pgrep check errored. Exiting."
-    exit
+    exit 1
   fi
-else
-  echo "Creating .pid file $pid_file"
-  echo $$ >$pid_file
 fi
 
+echo "Creating .pid file $pid_file"
+echo $$ >$pid_file
 echo "Start backuping..."
+
 restic --quiet --exclude={/dev,/media,/mnt,/proc,/run,/sys,/tmp,/var/tmp} backup /
 restic forget --keep-daily 10 --dry-run
 restic forget --prune --keep-daily 10 --quiet
