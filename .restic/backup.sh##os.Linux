@@ -1,0 +1,51 @@
+#!/bin/bash
+ 
+set -e
+ 
+repo_file="${1:-repo.sh}"
+log_file="${2:-restic.log}"
+pid_file="${3:-restic.pid}"
+restic_path="${4:-/nix/var/nix/profiles/default/bin}"
+
+# append both stdout and stderr to file
+exec >>$log_file
+exec 2>&1
+
+# extend PATH with restic executable
+export PATH="$restic_path:$PATH"
+
+# get RESTIC_PASSWORD, RESTIC_REPOSITORY
+. $repo_file
+
+echo -e "\n$(date)\nInitialize backup..."
+if [[ -f $pid_file ]]; then
+  echo "Found existing .pid file named $pid_file. Checking."
+
+  pgrep -F $pid_file
+  pid_is_stale=$?
+  pid=$(cat $pid_file)
+  pid_cmd=$(ps --no-headers -ww -o args -p $pid)
+
+  echo "pgrep check on existing .pid file returned exit status: $pid_is_stale"
+  echo "ps command on existing .pid file: $pid_cmd"
+
+  if [[ $pid_is_stale == 1 ]] || [[ $pid_cmd != *"restic"* ]]; then
+    echo "Removing .pid file and continuing."
+    rm $pid_file
+  else
+    echo "PID $pid is still running or pgrep check errored. Exiting."
+    exit
+  fi
+else
+  echo "Creating .pid file $pid_file"
+  echo $$ >$pid_file
+fi
+
+echo "Start backuping..."
+restic --quiet --exclude={/dev,/media,/mnt,/proc,/run,/sys,/tmp,/var/tmp} backup /
+restic forget --keep-daily 10 --dry-run
+restic forget --prune --keep-daily 10 --quiet
+
+echo "Removig .pid file $pid_file"
+rm $pid_file
+echo "Done."
