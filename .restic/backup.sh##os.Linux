@@ -18,7 +18,10 @@ export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 # get RESTIC_PASSWORD, RESTIC_REPOSITORY
 source $repo_file
 
-echo -e "\n$(date)\nInitialize backup..."
+echo -e "\n\n\n"
+echo "=============================================================="
+date
+echo "Initialize backup..."
 if [[ -f $pid_file ]]; then
   echo "Found existing .pid file named $pid_file. Checking."
 
