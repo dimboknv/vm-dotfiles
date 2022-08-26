@@ -28,6 +28,9 @@ abbr --add bhelp    'bat --plain --language=cmd-help'
 abbr --add rld      'exec fish'
 abbr --add mkdir    'mkdir -p'
 
+# sudo
+abbr --add sudo			'sudo env "PATH=$PATH"'
+
 # https://github.com/aristocratos/btop
 abbr --add htop     'btop'
 
