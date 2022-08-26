@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
- 
 repo_file="${1:-repo.sh}"
 log_file="${2:-restic.log}"
 pid_file="${3:-restic.pid}"
@@ -21,8 +19,8 @@ echo -e "\n$(date)\nInitialize backup..."
 if [[ -f $pid_file ]]; then
   echo "Found existing .pid file named $pid_file. Checking."
 
-  pid_is_stale=1
-  pgrep -F $pid_file && pid_is_stale=0
+  pgrep -F $pid_file
+  pid_is_stale=$?
   pid=$(cat $pid_file)
   pid_cmd=$(ps --no-headers -ww -o args -p $pid)
 
