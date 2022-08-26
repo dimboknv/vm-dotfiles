@@ -12,6 +12,9 @@ exec 2>&1
 # extend PATH with restic executable
 export PATH="$restic_path:$PATH"
 
+# https://nixos.wiki/wiki/Locales
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+
 # get RESTIC_PASSWORD, RESTIC_REPOSITORY
 source $repo_file
 
