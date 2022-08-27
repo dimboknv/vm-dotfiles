@@ -1,0 +1,21 @@
+#!/usr/bin/env fish
+
+# Directory to look for bootstrap executables in
+set bootstrap_d (status basename).d
+
+if not test -d $bootstrap_d
+    echo "Error: bootstrap directory '$bootstrap_d' not found" >&2
+    exit 1
+end
+
+for bootstrap in (find -L $bootstrap_d -type f | sort)
+    if test -x $bootstrap; not string match "*##*" $bootstrap; not string match "*~\$*" $bootstrap
+        echo "====================================================================="
+        date; echo -e "$bootstrap\n"
+        if not $bootstrap
+            echo "Error: bootstrap '$bootstrap' failed" >&2
+            exit 1
+        end
+        echo -e "\n\n\n"
+    end
+end
