@@ -10,12 +10,12 @@ end
 echo "Fisher update..."
 fisher update
 
-echo "Configure tide prompt"
-printf "%s\n" 1 1 2 2 1 2 2 y | tide configure
-
 echo "Update local plugis"
-for plugin in (find -L ~/.config/fish/local-plugins -type d -depth 1)
+for plugin in (find -L ~/.config/fish/local-plugins/ -maxdepth 1 -mindepth 1 -type d)
     echo $plugin
     fisher remove $plugin
     fisher install $plugin
 end
+
+echo "Configure tide prompt"
+printf "%s\n" 1 1 2 2 1 2 2 y | tide configure
