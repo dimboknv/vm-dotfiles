@@ -3,7 +3,7 @@ if status is-interactive
 end
 
 # https://iterm2.com/documentation-shell-integration.html
-source ~/.iterm2_shell_integration.fish
+test -e ~/.iterm2_shell_integration.fish && source ~/.iterm2_shell_integration.fish
 
 # https://github.com/IlanCosman/tide
 set -g tide_left_prompt_items os pwd git newline character
