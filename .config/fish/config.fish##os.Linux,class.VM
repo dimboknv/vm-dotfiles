@@ -33,7 +33,7 @@ set -x FX_LANG js
 set -x FX_SHOW_SIZE true
 
 # https://github.com/garabik/grc
-source (nix-store -q (which grc))/etc/grc.fish
+if which grc | grep -q nix; and command -q nix-store; source (nix-store -q (which grc))/etc/grc.fish end
 
 # https://nixos.wiki/wiki/Locales
 set -x LOCALE_ARCHIVE /usr/lib/locale/locale-archive
