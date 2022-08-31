@@ -4,7 +4,7 @@ echo "Init fish shell"
 
 if not functions -q fisher
     echo "Installing fisher..."
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+    curl -sL https://git.io/fisher | source
 end
 
 echo "Fisher update..."
