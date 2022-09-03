@@ -40,3 +40,7 @@ set -x LOCALE_ARCHIVE /usr/lib/locale/locale-archive
 
 # nix home-manager https://nix-community.github.io/home-manager/index.html#sec-install-standalone
 set -x NIX_PATH $HOME/.nix-defexpr/channels /nix/var/nix/profiles/per-user/root/channels
+
+# https://github.com/asdf-vm/asdf 
+source (nix-store -q (which asdf))/share/fish/vendor_completions.d/asdf.fish
+source (nix-store -q (which asdf))/share/asdf-vm/asdf.fish

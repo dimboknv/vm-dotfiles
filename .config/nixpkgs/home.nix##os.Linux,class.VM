@@ -41,6 +41,7 @@
 		iperf
 		nmap
 		restic
+		asdf
 		
 		# json
 		jless
