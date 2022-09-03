@@ -41,7 +41,7 @@
 		iperf
 		nmap
 		restic
-		asdf
+		asdf-vm
 		
 		# json
 		jless
