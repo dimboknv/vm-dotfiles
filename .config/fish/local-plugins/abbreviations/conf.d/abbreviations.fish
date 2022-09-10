@@ -8,6 +8,7 @@ function _abbreviations_install --on-event abbreviations_install
     abbr --add la 'exa --icons --git -ab'
     abbr --add lla 'exa --icons --git -ablg'
     abbr --add lsd 'exa --icons --git -bD'
+    abbr --add tree "exa --tree"
 
     # https://github.com/zyedidia/micro
     abbr --add m micro
@@ -133,6 +134,7 @@ function _abbreviations_uninstall --on-event abbreviations_uninstall
     abbr -e la
     abbr -e lla
     abbr -e lsd
+    abbr -e tree
 
     # https://github.com/zyedidia/micro
     abbr -e m
