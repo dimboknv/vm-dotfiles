@@ -42,6 +42,10 @@
 		nmap
 		restic
 		asdf-vm
+
+		# View disk space usage and delete unwanted data, fast.
+		# https://github.com/Byron/dua-cli
+		dua
 		
 		# json
 		jless
