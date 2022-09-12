@@ -10,55 +10,84 @@
     cudaSupport = true;
   };
 
-  # Packages.
   home.packages = with pkgs; [
-		# terminal utils
-		bat
-		bat-extras.batdiff
-		bat-extras.batgrep
-		bat-extras.batman
-		fd
-		ripgrep
-		fselect
-		exa
-		fzf
-		delta
-		git-extras
-		zoxide
-		imgcat
-		xplr
-		gping
-		grc
+    # A cat(1) clone with wings
+    # https://github.com/sharkdp/bat
+    bat
+    bat-extras.batdiff
+    bat-extras.batgrep
+    bat-extras.batman
 
-		# system utils
-		graphviz
-		yadm
-		btop
-		ctop
-		lazydocker
-		lnav
-		sqlite
-		iperf
-		nmap
-		restic
-		asdf-vm
+    # A simple, fast and user-friendly alternative to 'find' 
+    # https://github.com/sharkdp/fd
+    fd
 
-		# View disk space usage and delete unwanted data, fast.
-		# https://github.com/Byron/dua-cli
-		dua
-		
-		# json
-		jless
-		jq
-		fx
-		
-		# editors
-		micro
-		# neovim
-		
-		# http
-		httpie
-		xh
+    # ripgrep recursively searches directories for a regex pattern while respecting your gitignore 
+    # https://github.com/BurntSushi/ripgrep
+    ripgrep
+
+    # A modern replacement for ‘ls’
+    # https://github.com/ogham/exa
+    exa
+
+    # A smarter cd command. Supports all major shells
+    # https://github.com/ajeetdsouza/zoxide
+    zoxide
+
+    # A command-line fuzzy finder 
+    # https://github.com/junegunn/fzf
+    fzf
+
+    # Extendable version manager with support for Ruby, Node.js, Elixir, Erlang & more 
+    # https://github.com/asdf-vm/asdf
+    asdf-vm
+
+		# Fast, secure, efficient backup program
+		# https://github.com/restic/restic
+    restic
+
+    # A monitor of resources
+    # https://github.com/aristocratos/btop
+    btop
+
+    # The lazier way to manage everything docker
+    # https://github.com/jesseduffield/lazydocker
+    lazydocker
+
+    # View disk space usage and delete unwanted data, fast.
+    # https://github.com/Byron/dua-cli
+    dua
+
+    # generic colouriser
+    # https://github.com/garabik/grc
+    grc
+
+    yadm
+    fselect
+    delta
+    git-extras
+    imgcat
+    xplr
+    gping
+    graphviz
+    ctop
+    lnav
+    sqlite
+    iperf
+    nmap
+
+    # json
+    jless
+    jq
+    fx
+
+    # editors
+    micro
+    # neovim
+
+    # http
+    httpie
+    xh
     wget
   ];
 }
