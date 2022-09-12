@@ -54,6 +54,10 @@
     # https://github.com/jesseduffield/lazydocker
     lazydocker
 
+    # simple terminal UI for git commands
+    # https://github.com/jesseduffield/lazygit
+    lazygit
+
     # View disk space usage and delete unwanted data, fast.
     # https://github.com/Byron/dua-cli
     dua
