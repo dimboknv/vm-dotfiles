@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # Directory to look for bootstrap executables in
-set bootstrap_d (status filename).d
+set -l bootstrap_d (status filename).d
 
 if not test -d $bootstrap_d
     echo "Error: bootstrap directory '$bootstrap_d' not found" >&2
