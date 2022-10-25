@@ -47,8 +47,8 @@ echo $$ >$pid_file
 echo "Start backuping..."
 
 restic --quiet --exclude={/dev,/media,/mnt,/proc,/run,/sys,/tmp,/var/tmp} backup /
-restic forget --keep-daily 10 --dry-run
-restic forget --prune --keep-daily 10 --quiet
+restic forget --keep-daily 10 --keep-monthly 2 --dry-run
+restic forget --prune --keep-daily 10 --keep-monthly 2 --quiet
 
 echo "Removig .pid file $pid_file"
 rm $pid_file
